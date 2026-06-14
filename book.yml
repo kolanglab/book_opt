@@ -1,0 +1,48 @@
+title: "最適化入門"
+description: "言語処理系の最適化を、ピープホールから全プログラム解析まで、静的言語も動的言語も区別なく一望する地図。中間表現とデータフロー解析の土台から、SSA・ループ最適化・インライン展開・インラインキャッシュ・投機的最適化・レジスタ割り当て、そして equality saturation や superoptimization、機械学習による最適化といった最新研究まで、Ruby のコードと一次文献で一つずつ理解する専門入門書"
+author: "ligarb AI"
+language: "ja"
+ai_generated: true
+bibliography: references.bib
+chapters:
+  - cover: cover.md
+  - introduction.md
+  - part: part-foundations.md
+    chapters:
+      - intermediate-representation.md
+      - dataflow-analysis.md
+  - part: part-classic.md
+    chapters:
+      - peephole.md
+      - local-optimization.md
+      - dead-code-elimination.md
+      - ssa-optimization.md
+      - loop-optimization.md
+  - part: part-interprocedural.md
+    chapters:
+      - inlining.md
+      - interprocedural-analysis.md
+      - whole-program-optimization.md
+  - part: part-dynamic.md
+    chapters:
+      - dynamic-dispatch.md
+      - speculative-optimization.md
+  - part: part-backend.md
+    chapters:
+      - instruction-selection.md
+      - register-allocation.md
+      - instruction-scheduling.md
+  - part: part-frontier.md
+    chapters:
+      - equality-saturation.md
+      - superoptimization.md
+      - ml-and-future.md
+  - appendix:
+    - glossary.md
+
+repository: "https://github.com/kolanglab/book_opt"
+
+site_url: "https://kolanglab.github.io/book_opt/"
+
+github_review:
+  enabled: true
