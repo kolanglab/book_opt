@@ -36,13 +36,13 @@
 生存情報は**実行と逆向き**に流れる（「この先で使うか」を問うので未来から過去へ）。
 これを**後方解析**（backward analysis）という。方程式はこうなる。
 
-$$
+```math
 \mathit{OUT}[B] = \bigcup_{S \in \mathit{succ}(B)} \mathit{IN}[S]
-$$
+```
 
-$$
+```math
 \mathit{IN}[B] = \mathit{USE}[B] \cup (\mathit{OUT}[B] \setminus \mathit{DEF}[B])
-$$
+```
 
 言葉にすると——ブロック B の出口で生きている変数は、**後続のどれかの入口で生きている**変数すべて
 （合流; meet）。B の入口で生きている変数は、B 内で使う変数（`USE`）に、
