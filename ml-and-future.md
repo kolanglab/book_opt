@@ -129,33 +129,37 @@ MLIR は、本書で見てきた古典的最適化（[ループ最適化](loop-o
 ## 正しさをどう保証するか — 検証とセキュリティ
 
 学習や探索で最適化が大胆になるほど、「**壊していないか**」の保証が重みを増す。
-[前章の Alive](superoptimization.md)はピープホール規則を検証したが、その先には
-**コンパイラ全体を検証する**研究がある。**CompCert**[](#cite:leroy2009compcert)[](#cite:leroy2009backend)は、
-C コンパイラの正しさ（変換が意味を保つこと）を Coq で機械証明した画期だ——
-[Csmith のようなファザ](peephole.md)が GCC や Clang に多数のバグを見つける中、CompCert の中核は
-バグがほとんど見つからなかった。**CakeML**[](#cite:kumar2014cakeml)は ML コンパイラを
-自分自身でブートストラップするところまで検証し、**Vellvm**[](#cite:zhao2012vellvm)は LLVM IR の
-意味論そのものを形式化した（後継では、副作用を Interaction Trees[](#cite:xia2020itrees)で表す
-モジュラーで実行可能な意味論へ再構築されている[](#cite:zakowski2021vir)）。コンパイラ全体の証明が重すぎる場合は、**翻訳検証**——
-「証明済みのコンパイラ」でなく「**今回の変換が正しかったか**」を毎回チェックする[](#cite:pnueli1998translation)——
-という現実的な妥協もあり、[前章の Alive2](superoptimization.md)[](#cite:lopes2021alive2)や、
-変換ごとに証拠を吐かせて検証する Crellvm[](#cite:kang2018crellvm)、CompCert 向けに検証済みピープホールを
-積む Peek[](#cite:mullen2016peek)がその系譜だ。検証はバックエンドにも及び、
-Cranelift の命令選択規則（[ægraph と同じ Wasm 基盤](equality-saturation.md)）を軽量に検証する
-Crocus[](#cite:vanhattum2024crocus)まで現れている。
+[前章の Alive](superoptimization.md)はピープホール規則を検証したが、その先には**コンパイラ全体を検証する**研究がある。
+代表が **CompCert**[](#cite:leroy2009compcert)[](#cite:leroy2009backend)だ——C コンパイラの正しさ（変換が意味を保つこと）を、
+**Coq**（証明を機械がチェックする道具）で機械証明した画期である。効果は劇的だった。
+[Csmith のようなファザ](peephole.md)が GCC や Clang に多数のバグを見つける中、CompCert の中核からは
+バグがほとんど見つからなかった。
+
+コンパイラ全体を証明するのが重すぎる場合は、**翻訳検証**——「証明済みのコンパイラ」を作る代わりに、
+「**今回の変換が正しかったか**」を毎回チェックする[](#cite:pnueli1998translation)——という現実的な妥協もある。
+[前章の Alive2](superoptimization.md)[](#cite:lopes2021alive2)がその一例だった。
+
+> [!NOTE]
+> **発展**：検証されたコンパイラたち。
+> ML コンパイラを自分自身で検証ブートストラップする CakeML[](#cite:kumar2014cakeml)、LLVM IR の意味論を
+> 形式化した Vellvm[](#cite:zhao2012vellvm)（後継は副作用を Interaction Trees[](#cite:xia2020itrees)で表す実行可能な意味論[](#cite:zakowski2021vir)）、
+> 変換ごとに証拠を吐かせて検証する Crellvm[](#cite:kang2018crellvm)、検証済みピープホールを積む Peek[](#cite:mullen2016peek)、
+> Cranelift の命令選択規則を検証する Crocus[](#cite:vanhattum2024crocus)など、検証はフロントエンドからバックエンドまで広がっている。
 
 そして近年、**第三の軸**が立ち上がった。速さ・正しさに加えて、**機密性**だ。
 暗号コードは、秘密の値によって実行時間や分岐が変わらない「**定数時間**」で書かれる。ところが、
 最適化器がこの対策を**黙って壊す**ことが明らかになった[](#cite:simon2018whatyouget)——
-不要コード除去が秘密の消去を消し、命令選択が定数時間の選択を秘密依存の分岐に変えてしまう。
-バイナリレベルで調べると、ソースや IR では定数時間だったコードが、最適化を経て漏れていることが
-実証された[](#cite:daniel2020binsecrel)。「意味を保つ」最適化が、「**情報を漏らさない**」性質までは
-保ってくれないのだ。
-そこで、定数時間性を保つことを証明した CompCert 拡張[](#cite:barthe2020consttime)や、
-高保証暗号のための言語 Jasmin[](#cite:almeida2017jasmin)・FaCT[](#cite:cauligi2019fact)、
-型で定数時間を保証する WebAssembly 拡張 CT-wasm[](#cite:watt2019ctwasm)、
-投機実行のリーク（Spectre）を自動で塞ぐ Blade[](#cite:vassena2021blade)が現れた。
-そもそも「コンパイルが何を保てば安全か」を定式化する**セキュアコンパイル**の理論[](#cite:patrignani2019securecomp)も育っている。
+たとえば[不要コード除去](dead-code-elimination.md)が「秘密を消す代入」を「どうせ読まれない無駄な代入」と見なして消してしまう。
+実際、ソースや IR では定数時間だったコードが、最適化を経て漏れていることがバイナリ上で実証された[](#cite:daniel2020binsecrel)。
+「意味を保つ」最適化が、「**情報を漏らさない**」性質までは保ってくれないのだ。
+そこで、定数時間性を保つことを証明した CompCert 拡張[](#cite:barthe2020consttime)のように、
+速さ・正しさに**機密性**まで足したコンパイラが研究されている。
+
+> [!NOTE]
+> **発展**：機密性を守るコンパイル。
+> 定数時間を保証する暗号向け言語 Jasmin[](#cite:almeida2017jasmin)・FaCT[](#cite:cauligi2019fact)・CT-wasm[](#cite:watt2019ctwasm)、
+> 投機実行を悪用して秘密を盗む攻撃（Spectre）を自動で塞ぐ Blade[](#cite:vassena2021blade)、
+> 「コンパイルが何を保てば安全か」を定式化するセキュアコンパイルの理論[](#cite:patrignani2019securecomp)などがある。
 [導入で立てた問い](introduction.md)——何を下げ、何を仮定し、誰が保証するのか——に、
 「**何を漏らさないか**」という問いが加わったのである。
 

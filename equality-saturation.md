@@ -147,18 +147,17 @@ equality saturation は研究段階を脱しつつある。egg ライブラリ[]
 - **従来コンパイラの最適化**: Tate らの原論文[](#cite:tate2009)は、LLVM 的な最適化を
   equality saturation で行い、人手のパス順序を上回る例を示した。
 
-egg の登場後、equality saturation は単なるツールから**研究プログラム**へと育った。
-**relational e-matching**[](#cite:zhang2022relational)は、e-graph 上のパターン照合を関係データベースの
-結合問題として定式化し、最悪計算量最適な結合アルゴリズムを持ち込んで、初の計算量保証と桁違いの高速化を得た。
-**egglog**[](#cite:zhang2023egglog)は equality saturation と [Datalog](dataflow-analysis.md) を統合し、
-書き換えと解析（しかも増分・協調的）を一つの不動点反復に乗せた。書き換え規則そのものを
-equality saturation で自動合成する **Ruler**[](#cite:nandi2021ruler)もある——規則を人が書く時代の先を見ている。
-
-そして equality saturation は**プロダクションのコンパイラ**にも届いた。WebAssembly ランタイム
+そして egg の登場後、equality saturation は**プロダクションのコンパイラ**にも届いた。WebAssembly ランタイム
 Wasmtime のバックエンド Cranelift は、中間最適化器に **ægraph（acyclic e-graph）**[](#cite:fallin2023aegraph)を
 採用している。ただし egg 流の飽和は JIT の速度制約には重すぎたため、SSA の非循環性を活かして
 飽和を一回走査に畳み込み、ノード構築時に即座に書き換える形へ作り替えられた。
 「等価な式を全部持ってから選ぶ」という理論的な発想が、実用コンパイラの速度制約と折り合った好例だ。
+
+> [!NOTE]
+> **発展**：egg 以後、equality saturation は単なるツールから**研究プログラム**へ育った。
+> e-graph 上のパターン照合を関係データベースの結合として定式化し高速化した relational e-matching[](#cite:zhang2022relational)、
+> equality saturation と [Datalog](dataflow-analysis.md) を統合して書き換えと解析を一体化した egglog[](#cite:zhang2023egglog)、
+> 書き換え規則そのものを自動で見つける Ruler[](#cite:nandi2021ruler)など、理論・道具の両面で発展が続いている。
 
 equality saturation は[第 II 部の値番号付け](local-optimization.md)や
 [SSA の GVN](ssa-optimization.md)の正統な後継だと言える。値番号付けが「構造が同じ式を一つにまとめる」のに対し、
