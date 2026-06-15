@@ -43,7 +43,8 @@
 - **第 V 部「コード生成にまつわる最適化」** — [命令選択](instruction-selection.md)、
   [レジスタ割り当て](register-allocation.md)、[命令スケジューリング](instruction-scheduling.md)。
 - **第 VI 部「最前線」** — [equality saturation](equality-saturation.md)、
-  [superoptimization と検証](superoptimization.md)、[機械学習による最適化と未来](ml-and-future.md)。
+  [superoptimization と検証](superoptimization.md)、[領域特化コンパイラ](domain-specific-compilers.md)、
+  [機械学習による最適化と未来](ml-and-future.md)。
 - **付録** — [用語集](glossary.md)。
 
 ## このシリーズの他の本

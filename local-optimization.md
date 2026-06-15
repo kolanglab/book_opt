@@ -36,7 +36,11 @@ def local_const_prop(block)
     case i.op
     when :assign
       v = eval_operand(i.args[0], env)
-      env[i.dst] = v if v.is_a?(Integer)            # 定数なら記録
+      if v.is_a?(Integer)
+        env[i.dst] = v                              # 定数なら記録
+      else
+        env.delete(i.dst)                           # 定数でなくなったら表から外す
+      end
       Instr.new(:assign, i.dst, [(v || i.args[0]).to_s])
     when :binop
       op, a, b = i.args

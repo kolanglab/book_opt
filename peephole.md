@@ -61,7 +61,7 @@ module Peephole
 
     # 2. 代数的簡約 / 強度低減
     case [op, ca, cb]
-    in [:+, _, 0] | [:+, 0, _]      then return copy(i.dst, ca ? a : b)  # x+0 → x
+    in [:+, _, 0] | [:+, 0, _]      then return copy(i.dst, cb == 0 ? a : b)  # x+0 → x / 0+x → x（0 でない側を残す）
     in [:*, _, 1] | [:*, 1, _]      then return copy(i.dst, cb == 1 ? a : b)
     in [:*, _, 0] | [:*, 0, _]      then return Instr.new(:assign, i.dst, ["0"])
     in [:-, _, 0]                   then return copy(i.dst, a)
@@ -168,7 +168,7 @@ end
 - **ゼロ生成のイディオム**: `mov rax, 0` を `xor rax, rax` へ（短く、前の値への依存も断てる）。`x * 0 → 0` の機械語版だ。
 - **アドレッシングモードへの畳み込み**: `add r, base, off; load r2, [r]` を `load r2, [base+off]` の一命令に。`shl`+`add` のアドレス計算も同様にまとめる。
 - **フラグの再利用**: 直前の `sub`/`and` が結果のフラグを立てているなら、続く `cmp x, 0` は省ける。
-- **専用命令への置換**: `add r, 1 → inc r`、`sub r, 1 → dec r` のように、短い専用命令へ。
+- **専用命令への置換**: `add r, 1 → inc r`、`sub r, 1 → dec r` のように、短い専用命令へ。ただし無条件には危険だ——x86 の `inc`/`dec` はキャリーフラグ（CF）を更新しないなど、`add`/`sub` とフラグの挙動が違う。後続がそのフラグを読まないと確かめられたときだけ置換してよい（次に述べる「フラグまで含めた等価性」の典型例）。
 
 機械語ピープホールは「等価か」をハードウェアの意味論（フラグ、部分レジスタ、
 アラインメント）まで含めて守らねばならず、IR 段より落とし穴が多い。

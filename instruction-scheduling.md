@@ -101,8 +101,9 @@ def list_schedule(instrs, deps, latency)
     pick = ready.max_by { |i| critical_path_length(i, deps, latency) }  # 優先度で選択
     scheduled << pick
     done << pick
-    # この命令の結果は latency サイクル後に揃う → それを使う後続の ready_at を更新
-    instrs.each_index { |s| ready_at[s] = cycle + latency[pick] if deps[s].include?(pick) }
+    # この命令の結果は latency サイクル後に揃う → それを使う後続の ready_at を更新。
+    # 複数依存があるので、最も遅い依存に合わせて max を取る（後の更新で早い時刻に戻さない）。
+    instrs.each_index { |s| ready_at[s] = [ready_at[s], cycle + latency[pick]].max if deps[s].include?(pick) }
     cycle += 1
   end
   scheduled

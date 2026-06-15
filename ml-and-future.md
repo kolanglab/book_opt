@@ -73,7 +73,7 @@ MLGO は、人手のヒューリスティクスを上回るコードサイズ削
 学習コストモデルと進化探索で、テンプレートに縛られない広大なスケジュール空間を探索する。
 
 学習したコストモデルは、superoptimization やスケジューリングの**評価関数**として使える。
-[前章の STOKE](superoptimization.md)が「性能ペナルティ」を必要としたように、
+[superoptimization の章の STOKE](superoptimization.md)が「性能ペナルティ」を必要としたように、
 あらゆる探索ベースの最適化は良いコストモデルを欲しがる。
 正確なコスト予測は、探索系・学習系の最適化すべての土台になる縁の下の力持ちだ。
 
@@ -105,7 +105,7 @@ Cummins らは LLVM アセンブリを入力に最適化オプション列を出
 これは **Meta LLM Compiler**[](#cite:cummins2024llmcompiler)——LLVM-IR とアセンブリ 5460 億トークンで
 継続事前学習した基盤モデル群——へと発展した。
 まだ黎明期で、生成結果の**正しさをどう保証するか**が最大の課題になる——
-LLM はもっともらしいが間違った変換を平気で出すので、[前章の検証](superoptimization.md)（Alive[](#cite:lopes2015)や
+LLM はもっともらしいが間違った変換を平気で出すので、[superoptimization の章の検証](superoptimization.md)（Alive[](#cite:lopes2015)や
 SMT による等価チェック）と組み合わせて「**提案は LLM、検証は論理推論**」とする方向が現実的だ。
 探索・学習・検証という本書終盤の三本柱が、ここで合流する。
 
@@ -129,7 +129,7 @@ MLIR は、本書で見てきた古典的最適化（[ループ最適化](loop-o
 ## 正しさをどう保証するか — 検証とセキュリティ
 
 学習や探索で最適化が大胆になるほど、「**壊していないか**」の保証が重みを増す。
-[前章の Alive](superoptimization.md)はピープホール規則を検証したが、その先には**コンパイラ全体を検証する**研究がある。
+[superoptimization の章の Alive](superoptimization.md)はピープホール規則を検証したが、その先には**コンパイラ全体を検証する**研究がある。
 代表が **CompCert**[](#cite:leroy2009compcert)[](#cite:leroy2009backend)だ——C コンパイラの正しさ（変換が意味を保つこと）を、
 **Coq**（証明を機械がチェックする道具）で機械証明した画期である。効果は劇的だった。
 [Csmith のようなファザ](peephole.md)が GCC や Clang に多数のバグを見つける中、CompCert の中核からは
@@ -137,7 +137,7 @@ MLIR は、本書で見てきた古典的最適化（[ループ最適化](loop-o
 
 コンパイラ全体を証明するのが重すぎる場合は、**翻訳検証**——「証明済みのコンパイラ」を作る代わりに、
 「**今回の変換が正しかったか**」を毎回チェックする[](#cite:pnueli1998translation)——という現実的な妥協もある。
-[前章の Alive2](superoptimization.md)[](#cite:lopes2021alive2)がその一例だった。
+[superoptimization の章の Alive2](superoptimization.md)[](#cite:lopes2021alive2)がその一例だった。
 
 > [!NOTE]
 > **発展**：検証されたコンパイラたち。

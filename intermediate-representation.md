@@ -84,8 +84,9 @@ class Flattener
     in [:num, n]          then n.to_s
     in [:var, name]       then name
     in [:binop, op, l, r]
-      t = fresh
-      @code << Instr.new(:binop, t, [op, gen(l), gen(r)])  # 左右を先に平坦化
+      lt, rt = gen(l), gen(r)                              # 左右を先に平坦化
+      t = fresh                                            # その後で一時変数を採番
+      @code << Instr.new(:binop, t, [op, lt, rt])
       t
     in [:assign, name, e]
       @code << Instr.new(:assign, name, [gen(e)]); name
@@ -98,7 +99,8 @@ end
 ast = [:assign, "x", [:binop, :+, [:binop, :*, [:var, "a"], [:num, 2]], [:num, 1]]]
 Flattener.new.run(ast).each { puts _1 }
 # t1 = a * 2
-# x = t1 + 1
+# t2 = t1 + 1
+# x = t2
 ```
 
 平坦化された途中結果に名前が付いたことで、
