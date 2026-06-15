@@ -223,6 +223,15 @@ Cytron らは、変数の定義のある場所の**支配辺境**（dominance fr
 > 制御フローとデータフローを一枚のグラフに融合した IR もあり、HotSpot サーバコンパイラや
 > GraalVM が採用している。本書では基本ブロック＋φ の古典的 SSA を主に使うが、
 > [ssa-optimization](ssa-optimization.md) と [equality saturation](equality-saturation.md) で sea of nodes 系の発想にも触れる。
+>
+> IR 設計に「正解」はなく、今も揺れている。命令を CFG に縛らず浮かせる sea of nodes は
+> スケジューリングの自由度を生む一方、解析やデバッグを難しくする。実際 2025 年、V8 は
+> sea of nodes を捨てて CFG ベースの IR（Turboshaft/Maglev）へ回帰すると表明した[](#cite:v8t2025leavingson)——
+> 「純粋なノードだけが浮く SoN は、結局 CFG とそう変わらない」というのが現場の総括だ。
+> 逆に、データ依存を主役に据えてループや分岐を**領域**として畳む RVSDG[](#cite:reissmann2020rvsdg)のように、
+> 制御フローをさらに脱構築する方向の研究もある（PDG[](#cite:ferrante1987pdg)の系譜で、
+> こうした需要依存グラフからでも元の制御フローを完全に復元できることが示されている[](#cite:bahmann2015reconstruct)）。
+> 「制御フローをどこまで陽に持つか」は、いまだ生きた設計問題なのだ。
 
 ## まとめ — 本書で使う IR の地図
 

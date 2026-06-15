@@ -229,6 +229,15 @@
   doi = {10.1145/73141.74831}
 }
 
+@inproceedings{chambers1990,
+  author = {Craig Chambers and David Ungar},
+  title = {Iterative Type Analysis and Extended Message Splitting: Optimizing Dynamically-Typed Object-Oriented Programs},
+  booktitle = {Proceedings of the ACM SIGPLAN 1990 Conference on Programming Language Design and Implementation (PLDI)},
+  pages = {150--164},
+  year = {1990},
+  doi = {10.1145/93542.93567}
+}
+
 @inproceedings{holzle1991,
   author = {Urs H\"{o}lzle and Craig Chambers and David Ungar},
   title = {Optimizing Dynamically-Typed Object-Oriented Languages with Polymorphic Inline Caches},
@@ -464,4 +473,1016 @@
   year = {2021},
   note = {arXiv:2101.04808},
   url = {https://arxiv.org/abs/2101.04808}
+}
+
+% ===== Frontier additions (2021–2025 survey) =====
+
+% --- Equality saturation: post-egg research line + production ---
+@article{zhang2022relational,
+  author = {Yihong Zhang and Yisu Remy Wang and Max Willsey and Zachary Tatlock},
+  title = {Relational E-matching},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {6},
+  number = {POPL},
+  year = {2022},
+  doi = {10.1145/3498696}
+}
+
+@article{zhang2023egglog,
+  author = {Yihong Zhang and Yisu Remy Wang and Oliver Flatt and David Cao and Philip Zucker and Eli Rosenthal and Zachary Tatlock and Max Willsey},
+  title = {Better Together: Unifying Datalog and Equality Saturation},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {7},
+  number = {PLDI},
+  year = {2023},
+  doi = {10.1145/3591239}
+}
+
+@inproceedings{yang2021tensat,
+  author = {Yichen Yang and Phitchaya Mangpo Phothilimthana and Yisu Remy Wang and Max Willsey and Sudip Roy and Jacques Pienaar},
+  title = {Equality Saturation for Tensor Graph Superoptimization},
+  booktitle = {Proceedings of Machine Learning and Systems (MLSys)},
+  year = {2021},
+  note = {arXiv:2101.01332}
+}
+
+@misc{fallin2023aegraph,
+  author = {Chris Fallin},
+  title = {{\ae}graphs: Acyclic E-graphs for Efficient Optimization in a Production Compiler},
+  year = {2023},
+  note = {EGRAPHS 2023 workshop (co-located with PLDI); Cranelift/Wasmtime mid-end optimizer}
+}
+
+% --- ML / RL / LLMs for compiler optimization ---
+@inproceedings{mendis2019ithemal,
+  author = {Charith Mendis and Alex Renda and Saman Amarasinghe and Michael Carbin},
+  title = {Ithemal: Accurate, Portable and Fast Basic Block Throughput Estimation using Deep Neural Networks},
+  booktitle = {Proceedings of the 36th International Conference on Machine Learning (ICML)},
+  series = {PMLR 97},
+  year = {2019},
+  note = {arXiv:1808.07412}
+}
+
+@inproceedings{zheng2020ansor,
+  author = {Lianmin Zheng and Chengfan Jia and Minmin Sun and Zhao Wu and Cody Hao Yu and Ameer Haj-Ali and Yida Wang and Jun Yang and Danyang Zhuo and Koushik Sen and Joseph E. Gonzalez and Ion Stoica},
+  title = {Ansor: Generating High-Performance Tensor Programs for Deep Learning},
+  booktitle = {Proceedings of the 14th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year = {2020},
+  note = {arXiv:2006.06762}
+}
+
+@inproceedings{hajali2020autophase,
+  author = {Ameer Haj-Ali and Qijing Huang and William Moses and John Xiang and Krste Asanovic and John Wawrzynek and Ion Stoica},
+  title = {AutoPhase: Juggling HLS Phase Orderings in Random Forests with Deep Reinforcement Learning},
+  booktitle = {Proceedings of Machine Learning and Systems (MLSys)},
+  year = {2020},
+  note = {arXiv:2003.00671}
+}
+
+@inproceedings{cummins2022compilergym,
+  author = {Chris Cummins and Bram Wasti and Jiadong Guo and Brandon Cui and Jacson Ronchetti and Jubi Taneja and others},
+  title = {CompilerGym: Robust, Performant Compiler Optimization Environments for AI Research},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2022},
+  doi = {10.1109/CGO53902.2022.9741258}
+}
+
+@misc{cummins2023llm,
+  author = {Chris Cummins and Volker Seeker and Dejan Grubisic and Mostafa Elhoushi and Youwei Liang and Baptiste Rozi\`{e}re and Jonas Gehring and Fabian Gloeckle and Kim Hazelwood and Gabriel Synnaeve and Hugh Leather},
+  title = {Large Language Models for Compiler Optimization},
+  year = {2023},
+  note = {arXiv:2309.07062},
+  url = {https://arxiv.org/abs/2309.07062}
+}
+
+@misc{cummins2024llmcompiler,
+  author = {Chris Cummins and Volker Seeker and Dejan Grubisic and Baptiste Rozi\`{e}re and Jonas Gehring and Gabriel Synnaeve and Hugh Leather},
+  title = {Meta Large Language Model Compiler: Foundation Models of Compiler Optimization},
+  year = {2024},
+  note = {arXiv:2407.02524; see also CC 2025, doi:10.1145/3708493.3712691},
+  url = {https://arxiv.org/abs/2407.02524}
+}
+
+% --- Verification: bounded translation validation ---
+@inproceedings{lopes2021alive2,
+  author = {Nuno P. Lopes and Juneyoung Lee and Chung-Kil Hur and Zhengyang Liu and John Regehr},
+  title = {Alive2: Bounded Translation Validation for LLVM},
+  booktitle = {Proceedings of the 42nd ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2021},
+  doi = {10.1145/3453483.3454030}
+}
+
+% --- Tensor / ML / domain-specific compilers ---
+@inproceedings{chen2018tvm,
+  author = {Tianqi Chen and Thierry Moreau and Ziheng Jiang and Lianmin Zheng and Eddie Yan and Meghan Cowan and Haichen Shen and Leyuan Wang and Yuwei Hu and Luis Ceze and Carlos Guestrin and Arvind Krishnamurthy},
+  title = {TVM: An Automated End-to-End Optimizing Compiler for Deep Learning},
+  booktitle = {Proceedings of the 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year = {2018},
+  note = {arXiv:1802.04799}
+}
+
+@misc{rotem2018glow,
+  author = {Nadav Rotem and Jordan Fix and Saleem Abdulrasool and Summer Deng and Roman Dzhabarov and others},
+  title = {Glow: Graph Lowering Compiler Techniques for Neural Networks},
+  year = {2018},
+  note = {arXiv:1805.00907},
+  url = {https://arxiv.org/abs/1805.00907}
+}
+
+@inproceedings{jia2019taso,
+  author = {Zhihao Jia and Oded Padon and James Thomas and Todd Warszawski and Matei Zaharia and Alex Aiken},
+  title = {TASO: Optimizing Deep Learning Computation with Automatic Generation of Graph Substitutions},
+  booktitle = {Proceedings of the 27th ACM Symposium on Operating Systems Principles (SOSP)},
+  year = {2019},
+  doi = {10.1145/3341301.3359630}
+}
+
+@inproceedings{wang2021pet,
+  author = {Haojie Wang and Jidong Zhai and Mingyu Gao and Zixuan Ma and Shizhi Tang and Liyan Zheng and Yuanzhi Li and Kaiyuan Rong and Yuanyong Zhang and Zhihao Jia},
+  title = {PET: Optimizing Tensor Programs with Partially Equivalent Transformations and Automated Corrections},
+  booktitle = {Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year = {2021}
+}
+
+@inproceedings{ding2023hidet,
+  author = {Yaoyao Ding and Cody Hao Yu and Bojian Zheng and Yizhi Liu and Yida Wang and Gennady Pekhimenko},
+  title = {Hidet: Task-Mapping Programming Paradigm for Deep Learning Tensor Programs},
+  booktitle = {Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2023},
+  doi = {10.1145/3575693.3575702}
+}
+
+@inproceedings{shi2023welder,
+  author = {Yining Shi and Zhi Yang and Jilong Xue and Lingxiao Ma and Yuqing Xia and Ziming Miao and Yuxiao Guo and Fan Yang and Lidong Zhou},
+  title = {Welder: Scheduling Deep Learning Memory Access via Tile-graph},
+  booktitle = {Proceedings of the 17th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year = {2023}
+}
+
+@inproceedings{zhu2022roller,
+  author = {Hongyu Zhu and Ruofan Wu and Yijia Diao and Shanbin Ke and Haoyu Li and Chen Zhang and Jilong Xue and Lingxiao Ma and Yuqing Xia and Wei Cui and Fan Yang and Mao Yang and Lidong Zhou and Asaf Cidon and Gennady Pekhimenko},
+  title = {ROLLER: Fast and Efficient Tensor Compilation for Deep Learning},
+  booktitle = {Proceedings of the 16th USENIX Symposium on Operating Systems Design and Implementation (OSDI)},
+  year = {2022}
+}
+
+% --- Auto-vectorization / SLP ---
+@article{mendis2018goslp,
+  author = {Charith Mendis and Saman Amarasinghe},
+  title = {goSLP: Globally Optimized Superword Level Parallelism Framework},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {2},
+  number = {OOPSLA},
+  year = {2018},
+  doi = {10.1145/3276480}
+}
+
+@inproceedings{chen2021vegen,
+  author = {Yishen Chen and Charith Mendis and Michael Carbin and Saman Amarasinghe},
+  title = {VeGen: A Vectorizer Generator for SIMD and Beyond},
+  booktitle = {Proceedings of the 26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2021},
+  doi = {10.1145/3445814.3446692}
+}
+
+@inproceedings{vanhattum2021diospyros,
+  author = {Alexa VanHattum and Rachit Nigam and Vincent T. Lee and James Bornholt and Adrian Sampson},
+  title = {Vectorization for Digital Signal Processors via Equality Saturation},
+  booktitle = {Proceedings of the 26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2021},
+  doi = {10.1145/3445814.3446707}
+}
+
+@inproceedings{thomas2024isaria,
+  author = {Samuel Thomas and James Bornholt},
+  title = {Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors},
+  booktitle = {Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2024},
+  doi = {10.1145/3617232.3624873}
+}
+
+% --- Superoptimization / synthesis / rewrite-rule inference ---
+@misc{sasnauskas2017souper,
+  author = {Raimondas Sasnauskas and Yang Chen and Peter Collingbourne and Jeroen Ketema and Gratian Lup and Jubi Taneja and John Regehr},
+  title = {Souper: A Synthesizing Superoptimizer},
+  year = {2017},
+  note = {arXiv:1711.04422},
+  url = {https://arxiv.org/abs/1711.04422}
+}
+
+@article{nandi2021ruler,
+  author = {Chandrakana Nandi and Max Willsey and Amy Zhu and Yisu Remy Wang and Brett Saiki and Adam Anderson and Adriana Schulz and Dan Grossman and Zachary Tatlock},
+  title = {Rewrite Rule Inference Using Equality Saturation},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {OOPSLA},
+  year = {2021},
+  note = {arXiv:2108.10436}
+}
+
+% --- Memory-access / locality / data-layout ---
+@inproceedings{bondhugula2008pluto,
+  author = {Uday Bondhugula and Albert Hartono and J. Ramanujam and P. Sadayappan},
+  title = {A Practical Automatic Polyhedral Parallelizer and Locality Optimizer},
+  booktitle = {Proceedings of the 29th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2008},
+  doi = {10.1145/1375581.1375595}
+}
+
+@inproceedings{verdoolaege2010isl,
+  author = {Sven Verdoolaege},
+  title = {isl: An Integer Set Library for the Polyhedral Model},
+  booktitle = {Mathematical Software (ICMS 2010), LNCS 6327},
+  year = {2010},
+  doi = {10.1007/978-3-642-15582-6_49}
+}
+
+@article{verdoolaege2013ppcg,
+  author = {Sven Verdoolaege and Juan Carlos Juega and Albert Cohen and Jos\'{e} Ignacio G\'{o}mez and Christian Tenllado and Francky Catthoor},
+  title = {Polyhedral Parallel Code Generation for CUDA},
+  journal = {ACM Transactions on Architecture and Code Optimization (TACO)},
+  volume = {9},
+  number = {4},
+  year = {2013},
+  doi = {10.1145/2400682.2400713}
+}
+
+@inproceedings{frigo1999cacheoblivious,
+  author = {Matteo Frigo and Charles E. Leiserson and Harald Prokop and Sridhar Ramachandran},
+  title = {Cache-Oblivious Algorithms},
+  booktitle = {Proceedings of the 40th Annual IEEE Symposium on Foundations of Computer Science (FOCS)},
+  year = {1999}
+}
+
+@inproceedings{chilimbi1999layout,
+  author = {Trishul M. Chilimbi and Mark D. Hill and James R. Larus},
+  title = {Cache-Conscious Structure Layout},
+  booktitle = {Proceedings of the ACM SIGPLAN 1999 Conference on Programming Language Design and Implementation (PLDI)},
+  year = {1999},
+  doi = {10.1145/301618.301633}
+}
+
+@inproceedings{chilimbi1999definition,
+  author = {Trishul M. Chilimbi and Bob Davidson and James R. Larus},
+  title = {Cache-Conscious Structure Definition},
+  booktitle = {Proceedings of the ACM SIGPLAN 1999 Conference on Programming Language Design and Implementation (PLDI)},
+  year = {1999},
+  doi = {10.1145/301618.301635}
+}
+
+@inproceedings{henretty2011layout,
+  author = {Tom Henretty and Kevin Stock and Louis-No\"{e}l Pouchet and Franz Franchetti and J. Ramanujam and P. Sadayappan},
+  title = {Data Layout Transformation for Stencil Computations on Short-Vector SIMD Architectures},
+  booktitle = {Proceedings of the 20th International Conference on Compiler Construction (CC)},
+  year = {2011},
+  doi = {10.1007/978-3-642-19861-8_13}
+}
+
+@article{sung2012layout,
+  author = {I-Jui Sung and Nasser Anssari and John A. Stratton and Wen-mei W. Hwu},
+  title = {Data Layout Transformation Exploiting Memory-Level Parallelism in Structured Grid Many-Core Applications},
+  journal = {International Journal of Parallel Programming (IJPP)},
+  year = {2012},
+  doi = {10.1007/s10766-011-0182-5}
+}
+
+@inproceedings{mowry1992prefetch,
+  author = {Todd C. Mowry and Monica S. Lam and Anoop Gupta},
+  title = {Design and Evaluation of a Compiler Algorithm for Prefetching},
+  booktitle = {Proceedings of the 5th International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {1992}
+}
+
+@article{kjolstad2017taco,
+  author = {Fredrik Kjolstad and Shoaib Kamil and Stephen Chou and David Lugato and Saman Amarasinghe},
+  title = {The Tensor Algebra Compiler},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {1},
+  number = {OOPSLA},
+  year = {2017},
+  doi = {10.1145/3133901}
+}
+
+% --- PGO mechanics, code layout, and post-link binary optimization ---
+@inproceedings{chen2016autofdo,
+  author = {Dehao Chen and David Xinliang Li and Tipp Moseley},
+  title = {AutoFDO: Automatic Feedback-Directed Optimization for Warehouse-Scale Applications},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  pages = {12--23},
+  year = {2016},
+  doi = {10.1145/2854038.2854044}
+}
+
+@article{he2022profi,
+  author = {Wenlei He and Julian Mestre and Sergey Pupyrev and Lei Wang and Hongtao Yu},
+  title = {Profile Inference Revisited},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {6},
+  number = {POPL},
+  year = {2022},
+  doi = {10.1145/3498714}
+}
+
+@inproceedings{he2024csspgo,
+  author = {Wenlei He and Hongtao Yu and others},
+  title = {Revamping Sampling-Based PGO with Context-Sensitivity and Pseudo-instrumentation},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2024},
+  doi = {10.1109/CGO57630.2024.10444807}
+}
+
+@inproceedings{pettis1990positioning,
+  author = {Karl Pettis and Robert C. Hansen},
+  title = {Profile Guided Code Positioning},
+  booktitle = {Proceedings of the ACM SIGPLAN 1990 Conference on Programming Language Design and Implementation (PLDI)},
+  year = {1990},
+  doi = {10.1145/93542.93550}
+}
+
+@article{newell2020exttsp,
+  author = {Andy Newell and Sergey Pupyrev},
+  title = {Improved Basic Block Reordering},
+  journal = {IEEE Transactions on Computers},
+  volume = {69},
+  number = {12},
+  year = {2020},
+  doi = {10.1109/TC.2020.2982888}
+}
+
+@inproceedings{panchenko2019bolt,
+  author = {Maksim Panchenko and Rafael Auler and Bill Nell and Guilherme Ottoni},
+  title = {BOLT: A Practical Binary Optimizer for Data Centers and Beyond},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2019},
+  note = {arXiv:1807.06735},
+  doi = {10.5555/3314872.3314876}
+}
+
+@inproceedings{panchenko2021lightningbolt,
+  author = {Maksim Panchenko and Rafael Auler and Laith Sakka and Guilherme Ottoni},
+  title = {Lightning BOLT: Powerful, Fast, and Scalable Binary Optimization},
+  booktitle = {Proceedings of the 30th ACM SIGPLAN International Conference on Compiler Construction (CC)},
+  year = {2021},
+  doi = {10.1145/3446804.3446843}
+}
+
+@inproceedings{shen2023propeller,
+  author = {Han Shen and Krzysztof Pszeniczny and Rahman Lavaee and Snehasish Kumar and Sriraman Tallam and Xinliang David Li},
+  title = {Propeller: A Profile Guided, Relinking Optimizer for Warehouse-Scale Applications},
+  booktitle = {Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2023},
+  doi = {10.1145/3575693.3575727}
+}
+
+@inproceedings{johnson2017thinlto,
+  author = {Teresa Johnson and Mehdi Amini and Xinliang David Li},
+  title = {ThinLTO: Scalable and Incremental LTO},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2017}
+}
+
+% --- Fast JIT / WebAssembly code generation & verified deoptimization ---
+@article{fluckiger2018sourir,
+  author = {Olivier Fl\"{u}ckiger and Gabriel Scherer and Ming-Ho Yee and Aviral Goel and Amal Ahmed and Jan Vitek},
+  title = {Correctness of Speculative Optimizations with Dynamic Deoptimization},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {2},
+  number = {POPL},
+  year = {2018},
+  doi = {10.1145/3158137}
+}
+
+@article{barriere2021corejit,
+  author = {Aur\`{e}le Barri\`{e}re and Sandrine Blazy and Olivier Fl\"{u}ckiger and David Pichardie and Jan Vitek},
+  title = {Formally Verified Speculation and Deoptimization in a JIT Compiler},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {POPL},
+  year = {2021},
+  doi = {10.1145/3434327}
+}
+
+@article{xu2021copyandpatch,
+  author = {Haoran Xu and Fredrik Kjolstad},
+  title = {Copy-and-Patch Compilation},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {OOPSLA},
+  year = {2021},
+  doi = {10.1145/3485513}
+}
+
+@article{titzer2022inplace,
+  author = {Ben L. Titzer},
+  title = {A Fast In-Place Interpreter for WebAssembly},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {6},
+  number = {OOPSLA2},
+  year = {2022},
+  doi = {10.1145/3563311}
+}
+
+@inproceedings{titzer2024baseline,
+  author = {Ben L. Titzer},
+  title = {Whose Baseline Compiler Is It Anyway?},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2024},
+  note = {arXiv:2305.13241},
+  doi = {10.1109/CGO57630.2024.10444855}
+}
+
+% --- Intermediate representation design (see also click1995ir) ---
+@article{ferrante1987pdg,
+  author = {Jeanne Ferrante and Karl J. Ottenstein and Joe D. Warren},
+  title = {The Program Dependence Graph and Its Use in Optimization},
+  journal = {ACM Transactions on Programming Languages and Systems (TOPLAS)},
+  volume = {9},
+  number = {3},
+  year = {1987},
+  doi = {10.1145/24039.24041}
+}
+
+@article{bahmann2015reconstruct,
+  author = {Helge Bahmann and Nico Reissmann and Magnus Jahre and Jan Christian Meyer},
+  title = {Perfect Reconstructability of Control Flow from Demand Dependence Graphs},
+  journal = {ACM Transactions on Architecture and Code Optimization (TACO)},
+  volume = {11},
+  number = {4},
+  year = {2015},
+  doi = {10.1145/2693261}
+}
+
+@article{reissmann2020rvsdg,
+  author = {Nico Reissmann and Jan Christian Meyer and Helge Bahmann and Magnus Sj\"{a}lander},
+  title = {RVSDG: An Intermediate Representation for Optimizing Compilers},
+  journal = {ACM Transactions on Embedded Computing Systems (TECS)},
+  volume = {19},
+  number = {6},
+  year = {2020},
+  note = {arXiv:1912.05036},
+  doi = {10.1145/3391902}
+}
+
+@misc{v8t2025leavingson,
+  author = {{V8 Team}},
+  title = {Land Ahoy: Leaving the Sea of Nodes},
+  year = {2025},
+  howpublished = {V8 developer blog},
+  url = {https://v8.dev/blog/leaving-the-sea-of-nodes}
+}
+
+% --- Verified & translation-validated compilation ---
+@article{leroy2009compcert,
+  author = {Xavier Leroy},
+  title = {Formal Verification of a Realistic Compiler},
+  journal = {Communications of the ACM},
+  volume = {52},
+  number = {7},
+  pages = {107--115},
+  year = {2009},
+  doi = {10.1145/1538788.1538814}
+}
+
+@article{leroy2009backend,
+  author = {Xavier Leroy},
+  title = {A Formally Verified Compiler Back-end},
+  journal = {Journal of Automated Reasoning},
+  volume = {43},
+  number = {4},
+  pages = {363--446},
+  year = {2009},
+  doi = {10.1007/s10817-009-9155-4}
+}
+
+@inproceedings{kumar2014cakeml,
+  author = {Ramana Kumar and Magnus O. Myreen and Michael Norrish and Scott Owens},
+  title = {CakeML: A Verified Implementation of ML},
+  booktitle = {Proceedings of the 41st ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)},
+  pages = {179--191},
+  year = {2014},
+  doi = {10.1145/2535838.2535841}
+}
+
+@inproceedings{zhao2012vellvm,
+  author = {Jianzhou Zhao and Santosh Nagarakatte and Milo M. K. Martin and Steve Zdancewic},
+  title = {Formalizing the LLVM Intermediate Representation for Verified Program Transformations},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages (POPL)},
+  pages = {427--440},
+  year = {2012},
+  doi = {10.1145/2103656.2103709}
+}
+
+@article{zakowski2021vir,
+  author = {Yannick Zakowski and Calvin Beck and Irene Yoon and Ilia Zaichuk and Vadim Zaliva and Steve Zdancewic},
+  title = {Modular, Compositional, and Executable Formal Semantics for LLVM IR},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {ICFP},
+  year = {2021},
+  doi = {10.1145/3473572}
+}
+
+@article{xia2020itrees,
+  author = {Li-yao Xia and Yannick Zakowski and Paul He and Chung-Kil Hur and Gregory Malecha and Benjamin C. Pierce and Steve Zdancewic},
+  title = {Interaction Trees: Representing Recursive and Impure Programs in Coq},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {4},
+  number = {POPL},
+  year = {2020},
+  doi = {10.1145/3371119}
+}
+
+@inproceedings{kang2018crellvm,
+  author = {Jeehoon Kang and Yoonseung Kim and Youngju Song and Juneyoung Lee and Sanghoon Park and Mark Dongyeon Shin and Yonghyun Kim and Sungkeun Cho and Joonwon Choi and Chung-Kil Hur and Kwangkeun Yi},
+  title = {Crellvm: Verified Credible Compilation for LLVM},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2018},
+  doi = {10.1145/3192366.3192377}
+}
+
+@inproceedings{mullen2016peek,
+  author = {Eric Mullen and Daryl Zuniga and Zachary Tatlock and Dan Grossman},
+  title = {Verified Peephole Optimizations for CompCert},
+  booktitle = {Proceedings of the 37th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2016},
+  doi = {10.1145/2908080.2908109}
+}
+
+@inproceedings{vanhattum2024crocus,
+  author = {Alexa VanHattum and Monica Pardeshi and Chris Fallin and Adrian Sampson and Fraser Brown},
+  title = {Lightweight, Modular Verification for WebAssembly-to-Native Instruction Selection},
+  booktitle = {Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2024},
+  doi = {10.1145/3617232.3624862}
+}
+
+@inproceedings{pnueli1998translation,
+  author = {Amir Pnueli and Michael Siegel and Eli Singerman},
+  title = {Translation Validation},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems (TACAS), LNCS 1384},
+  year = {1998},
+  doi = {10.1007/BFb0054170}
+}
+
+@inproceedings{rideau2010regalloc,
+  author = {Silvain Rideau and Xavier Leroy},
+  title = {Validating Register Allocation and Spilling},
+  booktitle = {Proceedings of the 19th International Conference on Compiler Construction (CC)},
+  year = {2010},
+  doi = {10.1007/978-3-642-11957-6_9}
+}
+
+% --- Register allocation (SSA-based, puzzle, production, learned) ---
+@inproceedings{hack2006ssa,
+  author = {Sebastian Hack and Daniel Grund and Gerhard Goos},
+  title = {Register Allocation for Programs in SSA-Form},
+  booktitle = {Proceedings of the 15th International Conference on Compiler Construction (CC)},
+  pages = {247--262},
+  year = {2006},
+  doi = {10.1007/11688839_20}
+}
+
+@article{hackgoos2006ipl,
+  author = {Sebastian Hack and Gerhard Goos},
+  title = {Optimal Register Allocation for SSA-Form Programs in Polynomial Time},
+  journal = {Information Processing Letters},
+  volume = {98},
+  number = {4},
+  pages = {150--155},
+  year = {2006},
+  doi = {10.1016/j.ipl.2006.01.008}
+}
+
+@inproceedings{braun2009spilling,
+  author = {Matthias Braun and Sebastian Hack},
+  title = {Register Spilling and Live-Range Splitting for SSA-Form Programs},
+  booktitle = {Proceedings of the 18th International Conference on Compiler Construction (CC)},
+  pages = {174--189},
+  year = {2009},
+  doi = {10.1007/978-3-642-00722-4_13}
+}
+
+@inproceedings{pereira2008puzzle,
+  author = {Fernando Magno Quint\~{a}o Pereira and Jens Palsberg},
+  title = {Register Allocation by Puzzle Solving},
+  booktitle = {Proceedings of the 29th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  pages = {216--226},
+  year = {2008},
+  doi = {10.1145/1375581.1375609}
+}
+
+@misc{olesen2011greedy,
+  author = {Jakob Stoklund Olesen},
+  title = {Greedy Register Allocation in LLVM 3.0},
+  year = {2011},
+  howpublished = {LLVM Project Blog / LLVM Developers' Meeting},
+  url = {https://blog.llvm.org/2011/09/greedy-register-allocation-in-llvm-30.html}
+}
+
+@misc{fallin2022regalloc2,
+  author = {Chris Fallin},
+  title = {regalloc2: A New Register Allocator for Cranelift},
+  year = {2022},
+  howpublished = {Author's blog (cfallin.org)},
+  url = {https://cfallin.org/blog/2022/06/09/cranelift-regalloc2/}
+}
+
+@inproceedings{venkatakeerthy2023rl4real,
+  author = {S. VenkataKeerthy and Siddharth Jain and Anilava Kundu and Rohit Aggarwal and Albert Cohen and Ramakrishna Upadrasta},
+  title = {RL4ReAl: Reinforcement Learning for Register Allocation},
+  booktitle = {Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (CC)},
+  year = {2023},
+  doi = {10.1145/3578360.3580273}
+}
+
+% --- Scheduling languages, autoschedulers, GPU/polyhedral DSLs ---
+@inproceedings{ragankelley2013halide,
+  author = {Jonathan Ragan-Kelley and Connelly Barnes and Andrew Adams and Sylvain Paris and Fr\'{e}do Durand and Saman Amarasinghe},
+  title = {Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines},
+  booktitle = {Proceedings of the 34th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  pages = {519--530},
+  year = {2013},
+  doi = {10.1145/2491956.2462176}
+}
+
+@article{ragankelley2018halidecacm,
+  author = {Jonathan Ragan-Kelley and Andrew Adams and Dillon Sharlet and Connelly Barnes and Sylvain Paris and Marc Levoy and Saman Amarasinghe and Fr\'{e}do Durand},
+  title = {Halide: Decoupling Algorithms from Schedules for High-Performance Image Processing},
+  journal = {Communications of the ACM},
+  volume = {61},
+  number = {1},
+  pages = {106--115},
+  year = {2018},
+  doi = {10.1145/3150211}
+}
+
+@article{adams2019autoscheduler,
+  author = {Andrew Adams and Karima Ma and Luke Anderson and Riyadh Baghdadi and Tzu-Mao Li and Micha\"{e}l Gharbi and Benoit Steiner and Steven Johnson and Kayvon Fatahalian and Fr\'{e}do Durand and Jonathan Ragan-Kelley},
+  title = {Learning to Optimize Halide with Tree Search and Random Programs},
+  journal = {ACM Transactions on Graphics (SIGGRAPH)},
+  volume = {38},
+  number = {4},
+  year = {2019},
+  doi = {10.1145/3306346.3322967}
+}
+
+@article{anderson2021gpuauto,
+  author = {Luke Anderson and Andrew Adams and Karima Ma and Tzu-Mao Li and Tian Jin and Jonathan Ragan-Kelley},
+  title = {Efficient Automatic Scheduling of Imaging and Vision Pipelines for the GPU},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {OOPSLA},
+  year = {2021},
+  doi = {10.1145/3485486}
+}
+
+@inproceedings{zheng2020flextensor,
+  author = {Size Zheng and Yun Liang and Shuo Wang and Renze Chen and Kaiwen Sheng},
+  title = {FlexTensor: An Automatic Schedule Exploration and Optimization Framework for Tensor Computation on Heterogeneous System},
+  booktitle = {Proceedings of the 25th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2020},
+  doi = {10.1145/3373376.3378508}
+}
+
+@article{ikarashi2022exo,
+  author = {Yuka Ikarashi and Gilbert Louis Bernstein and Alex Reinking and Hasan Genc and Jonathan Ragan-Kelley},
+  title = {Exocompilation for Productive Programming of Hardware Accelerators},
+  journal = {Proceedings of the 43rd ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2022},
+  doi = {10.1145/3519939.3523446}
+}
+
+@inproceedings{tillet2019triton,
+  author = {Philippe Tillet and H. T. Kung and David Cox},
+  title = {Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations},
+  booktitle = {Proceedings of the 3rd ACM SIGPLAN International Workshop on Machine Learning and Programming Languages (MAPL)},
+  year = {2019},
+  doi = {10.1145/3315508.3329973}
+}
+
+@inproceedings{baghdadi2019tiramisu,
+  author = {Riyadh Baghdadi and Jessica Ray and Malek Ben Romdhane and Emanuele Del Sozzo and Abdurrahman Akkas and Yunming Zhang and Patricia Suriana and Shoaib Kamil and Saman Amarasinghe},
+  title = {Tiramisu: A Polyhedral Compiler for Expressing Fast and Portable Code},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2019},
+  doi = {10.1109/CGO.2019.8661197}
+}
+
+@inproceedings{moses2021polygeist,
+  author = {William S. Moses and Lorenzo Chelini and Ruizhe Zhao and Oleksandr Zinenko},
+  title = {Polygeist: Raising C to Polyhedral MLIR},
+  booktitle = {Proceedings of the 30th International Conference on Parallel Architectures and Compilation Techniques (PACT)},
+  year = {2021}
+}
+
+% --- Partial evaluation & self-optimizing interpreters (see also futamura1999, jones1993, wurthinger2013, wurthinger2017) ---
+@inproceedings{wurthinger2012selfopt,
+  author = {Thomas W\"{u}rthinger and Andreas W\"{o}\ss{} and Lukas Stadler and Gilles Duboscq and Doug Simon and Christian Wimmer},
+  title = {Self-Optimizing AST Interpreters},
+  booktitle = {Proceedings of the 8th Dynamic Languages Symposium (DLS)},
+  year = {2012},
+  doi = {10.1145/2384577.2384587}
+}
+
+@article{brown2018jones,
+  author = {Matt Brown and Jens Palsberg},
+  title = {Jones-Optimal Partial Evaluation by Specialization-Safe Normalization},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {2},
+  number = {POPL},
+  year = {2018},
+  doi = {10.1145/3158102}
+}
+
+% --- Secure / constant-time / side-channel-aware compilation ---
+@inproceedings{simon2018whatyouget,
+  author = {Laurent Simon and David Chisnall and Ross Anderson},
+  title = {What You Get is What You C: Controlling Side Effects in Mainstream C Compilers},
+  booktitle = {Proceedings of the 3rd IEEE European Symposium on Security and Privacy (EuroS\&P)},
+  year = {2018},
+  doi = {10.1109/EuroSP.2018.00009}
+}
+
+@inproceedings{daniel2020binsecrel,
+  author = {Lesly-Ann Daniel and S\'{e}bastien Bardin and Tamara Rezk},
+  title = {Binsec/Rel: Efficient Relational Symbolic Execution for Constant-Time at Binary-Level},
+  booktitle = {Proceedings of the 41st IEEE Symposium on Security and Privacy (S\&P)},
+  year = {2020},
+  note = {arXiv:1912.08788}
+}
+
+@article{barthe2020consttime,
+  author = {Gilles Barthe and Sandrine Blazy and Benjamin Gr\'{e}goire and R\'{e}mi Hutin and Vincent Laporte and David Pichardie and Alix Trieu},
+  title = {Formal Verification of a Constant-Time Preserving C Compiler},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {4},
+  number = {POPL},
+  year = {2020},
+  doi = {10.1145/3371075}
+}
+
+@inproceedings{almeida2017jasmin,
+  author = {Jos\'{e} Bacelar Almeida and Manuel Barbosa and Gilles Barthe and Arthur Blot and Benjamin Gr\'{e}goire and Vincent Laporte and Tiago Oliveira and Hugo Pacheco and Benedikt Schmidt and Pierre-Yves Strub},
+  title = {Jasmin: High-Assurance and High-Speed Cryptography},
+  booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  year = {2017},
+  doi = {10.1145/3133956.3134078}
+}
+
+@inproceedings{cauligi2019fact,
+  author = {Sunjay Cauligi and Gary Soeller and Brian Johannesmeyer and Fraser Brown and Riad S. Wahby and John Renner and Benjamin Gr\'{e}goire and Gilles Barthe and Ranjit Jhala and Deian Stefan},
+  title = {FaCT: A DSL for Timing-Sensitive Computation},
+  booktitle = {Proceedings of the 40th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2019},
+  doi = {10.1145/3314221.3314605}
+}
+
+@article{watt2019ctwasm,
+  author = {Conrad Watt and John Renner and Natalie Popescu and Sunjay Cauligi and Deian Stefan},
+  title = {CT-wasm: Type-Driven Secure Cryptography for the Web Ecosystem},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {3},
+  number = {POPL},
+  year = {2019},
+  doi = {10.1145/3290390}
+}
+
+@article{vassena2021blade,
+  author = {Marco Vassena and Craig Disselkoen and Klaus von Gleissenthall and Sunjay Cauligi and Rami G\"{o}khan K{\i}c{\i} and Ranjit Jhala and Dean Tullsen and Deian Stefan},
+  title = {Automatically Eliminating Speculative Leaks from Cryptographic Code with Blade},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {POPL},
+  year = {2021},
+  doi = {10.1145/3434330}
+}
+
+@article{patrignani2019securecomp,
+  author = {Marco Patrignani and Amal Ahmed and Dave Clarke},
+  title = {Formal Approaches to Secure Compilation: A Survey of Fully Abstract Compilation and Related Work},
+  journal = {ACM Computing Surveys},
+  volume = {51},
+  number = {6},
+  year = {2019},
+  doi = {10.1145/3280984}
+}
+
+% --- Automatic differentiation as a compiler transformation ---
+@inproceedings{moses2020enzyme,
+  author = {William S. Moses and Valentin Churavy},
+  title = {Instead of Rewriting Foreign Code for Machine Learning, Automatically Synthesize Fast Gradients},
+  booktitle = {Advances in Neural Information Processing Systems 33 (NeurIPS)},
+  year = {2020},
+  note = {arXiv:2010.01709}
+}
+
+@inproceedings{moses2021enzymegpu,
+  author = {William S. Moses and Valentin Churavy and Ludger Paehler and Jan H\"{u}ckelheim and Sri Hari Krishna Narayanan and Michel Schanen and Johannes Doerfert},
+  title = {Reverse-Mode Automatic Differentiation and Optimization of GPU Kernels via Enzyme},
+  booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC)},
+  year = {2021},
+  doi = {10.1145/3458817.3476165}
+}
+
+@misc{innes2018zygote,
+  author = {Michael Innes},
+  title = {Don't Unroll Adjoint: Differentiating SSA-Form Programs},
+  year = {2018},
+  note = {arXiv:1810.07951},
+  url = {https://arxiv.org/abs/1810.07951}
+}
+
+@article{hascoet2013tapenade,
+  author = {Laurent Hasco\"{e}t and Val\'{e}rie Pascual},
+  title = {The Tapenade Automatic Differentiation Tool: Principles, Model, and Specification},
+  journal = {ACM Transactions on Mathematical Software (TOMS)},
+  volume = {39},
+  number = {3},
+  year = {2013},
+  doi = {10.1145/2450153.2450158}
+}
+
+@article{elliott2018ad,
+  author = {Conal Elliott},
+  title = {The Simple Essence of Automatic Differentiation},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {2},
+  number = {ICFP},
+  year = {2018},
+  doi = {10.1145/3236765}
+}
+
+% --- Query / data-analytics compilation ---
+@article{neumann2011query,
+  author = {Thomas Neumann},
+  title = {Efficiently Compiling Efficient Query Plans for Modern Hardware},
+  journal = {Proceedings of the VLDB Endowment (PVLDB)},
+  volume = {4},
+  number = {9},
+  pages = {539--550},
+  year = {2011},
+  doi = {10.14778/2002938.2002940}
+}
+
+@inproceedings{rompf2010lms,
+  author = {Tiark Rompf and Martin Odersky},
+  title = {Lightweight Modular Staging: A Pragmatic Approach to Runtime Code Generation and Compiled DSLs},
+  booktitle = {Proceedings of the 9th International Conference on Generative Programming and Component Engineering (GPCE)},
+  year = {2010},
+  doi = {10.1145/1868294.1868314}
+}
+
+@article{klonatos2014legobase,
+  author = {Yannis Klonatos and Christoph Koch and Tiark Rompf and Hassan Chafi},
+  title = {Building Efficient Query Engines in a High-Level Language},
+  journal = {Proceedings of the VLDB Endowment (PVLDB)},
+  volume = {7},
+  number = {10},
+  year = {2014},
+  doi = {10.14778/2732951.2732959}
+}
+
+@inproceedings{tahboub2018revisited,
+  author = {Ruby Y. Tahboub and Gr\'{e}gory M. Essertel and Tiark Rompf},
+  title = {How to Architect a Query Compiler, Revisited},
+  booktitle = {Proceedings of the 2018 ACM SIGMOD International Conference on Management of Data (SIGMOD)},
+  year = {2018},
+  doi = {10.1145/3183713.3196893}
+}
+
+@inproceedings{palkar2017weld,
+  author = {Shoumik Palkar and James J. Thomas and Anil Shanbhag and Deepak Narayanan and Holger Pirk and Malte Schwarzkopf and Saman Amarasinghe and Matei Zaharia},
+  title = {Weld: A Common Runtime for High Performance Data Analytics},
+  booktitle = {Proceedings of the 8th Biennial Conference on Innovative Data Systems Research (CIDR)},
+  year = {2017}
+}
+
+@article{palkar2018weld,
+  author = {Shoumik Palkar and James Thomas and Deepak Narayanan and Pratiksha Thaker and Rahul Palamuttam and Parimarjan Negi and Anil Shanbhag and Malte Schwarzkopf and Holger Pirk and Saman Amarasinghe and Samuel Madden and Matei Zaharia},
+  title = {Evaluating End-to-End Optimization for Data Analytics Applications in Weld},
+  journal = {Proceedings of the VLDB Endowment (PVLDB)},
+  volume = {11},
+  number = {9},
+  year = {2018},
+  doi = {10.14778/3213880.3213890}
+}
+
+@inproceedings{armbrust2015sparksql,
+  author = {Michael Armbrust and Reynold S. Xin and Cheng Lian and Yin Huai and Davies Liu and Joseph K. Bradley and Xiangrui Meng and Tomer Kaftan and Michael J. Franklin and Ali Ghodsi and Matei Zaharia},
+  title = {Spark SQL: Relational Data Processing in Spark},
+  booktitle = {Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data (SIGMOD)},
+  year = {2015},
+  doi = {10.1145/2723372.2742797}
+}
+
+@article{kersten2018everything,
+  author = {Timo Kersten and Viktor Leis and Alfons Kemper and Thomas Neumann and Andrew Pavlo and Peter Boncz},
+  title = {Everything You Always Wanted to Know About Compiled and Vectorized Queries But Were Afraid to Ask},
+  journal = {Proceedings of the VLDB Endowment (PVLDB)},
+  volume = {11},
+  number = {13},
+  year = {2018},
+  doi = {10.14778/3275366.3284966}
+}
+
+% --- High-level synthesis / hardware compilation ---
+@inproceedings{nigam2021calyx,
+  author = {Rachit Nigam and Samuel Thomas and Zhijing Li and Adrian Sampson},
+  title = {A Compiler Infrastructure for Accelerator Generators},
+  booktitle = {Proceedings of the 26th ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)},
+  year = {2021},
+  note = {arXiv:2102.09713},
+  doi = {10.1145/3445814.3446712}
+}
+
+@inproceedings{nigam2020dahlia,
+  author = {Rachit Nigam and Sachille Atapattu and Samuel Thomas and Zhijing Li and Theodore Bauer and Yuwei Ye and Apurva Koti and Adrian Sampson and Zhiru Zhang},
+  title = {Predictable Accelerator Design with Time-Sensitive Affine Types},
+  booktitle = {Proceedings of the 41st ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2020},
+  doi = {10.1145/3385412.3385974}
+}
+
+@inproceedings{koeplinger2018spatial,
+  author = {David Koeplinger and Matthew Feldman and Raghu Prabhakar and Yaqi Zhang and Stefan Hadjis and Ruben Fiszel and Tian Zhao and Luigi Nardi and Ardavan Pedram and Christos Kozyrakis and Kunle Olukotun},
+  title = {Spatial: A Language and Compiler for Application Accelerators},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2018},
+  doi = {10.1145/3192366.3192379}
+}
+
+@article{herklotz2021vericert,
+  author = {Yann Herklotz and James D. Pollard and Nadesh Ramanathan and John Wickerson},
+  title = {Formal Verification of High-Level Synthesis},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {5},
+  number = {OOPSLA},
+  year = {2021},
+  doi = {10.1145/3485494}
+}
+
+@misc{circt,
+  author = {{The CIRCT Project}},
+  title = {CIRCT: Circuit IR Compilers and Tools},
+  year = {2021},
+  howpublished = {LLVM Incubator project},
+  url = {https://circt.llvm.org/}
+}
+
+% --- Parallelizing / GPU / heterogeneous compilation & functional fusion ---
+@inproceedings{steuwer2017lift,
+  author = {Michel Steuwer and Toomas Remmelg and Christophe Dubach},
+  title = {Lift: A Functional Data-Parallel IR for High-Performance GPU Code Generation},
+  booktitle = {Proceedings of the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+  year = {2017},
+  doi = {10.1145/3049832.3049841}
+}
+
+@article{hagedorn2020rise,
+  author = {Bastian Hagedorn and Johannes Lenfers and Thomas K{\oe}hler and Xueying Qin and Sergei Gorlatch and Michel Steuwer},
+  title = {Achieving High-Performance the Functional Way: A Functional Pearl on Expressing High-Performance Optimizations as Rewrite Strategies},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume = {4},
+  number = {ICFP},
+  year = {2020},
+  doi = {10.1145/3408974}
+}
+
+@inproceedings{grosser2016pollyacc,
+  author = {Tobias Grosser and Torsten Hoefler},
+  title = {Polly-ACC: Transparent Compilation to Heterogeneous Hardware},
+  booktitle = {Proceedings of the 30th International Conference on Supercomputing (ICS)},
+  year = {2016},
+  doi = {10.1145/2925426.2926286}
+}
+
+@inproceedings{henriksen2017futhark,
+  author = {Troels Henriksen and Niels G. W. Serup and Martin Elsman and Fritz Henglein and Cosmin E. Oancea},
+  title = {Futhark: Purely Functional GPU-Programming with Nested Parallelism and In-Place Array Updates},
+  booktitle = {Proceedings of the 38th ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)},
+  year = {2017},
+  doi = {10.1145/3062341.3062354}
+}
+
+@inproceedings{coutts2007streamfusion,
+  author = {Duncan Coutts and Roman Leshchinsky and Don Stewart},
+  title = {Stream Fusion: From Lists to Streams to Nothing at All},
+  booktitle = {Proceedings of the 12th ACM SIGPLAN International Conference on Functional Programming (ICFP)},
+  year = {2007},
+  doi = {10.1145/1291151.1291199}
+}
+
+@inproceedings{gill1993deforestation,
+  author = {Andrew Gill and John Launchbury and Simon L. Peyton Jones},
+  title = {A Short Cut to Deforestation},
+  booktitle = {Proceedings of the Conference on Functional Programming Languages and Computer Architecture (FPCA)},
+  year = {1993},
+  doi = {10.1145/165180.165214}
+}
+
+@inproceedings{peytonjones2001rules,
+  author = {Simon Peyton Jones and Andrew Tolmach and Tony Hoare},
+  title = {Playing by the Rules: Rewriting as a Practical Optimisation Technique in GHC},
+  booktitle = {Proceedings of the 2001 Haskell Workshop},
+  year = {2001}
 }

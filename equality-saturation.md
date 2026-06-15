@@ -141,10 +141,24 @@ equality saturation は研究段階を脱しつつある。egg ライブラリ[]
 応用が広がった。
 
 - **浮動小数点の精度最適化**（Herbie）: 数値的に正確な等価式を探す。
-- **ハードウェア設計・テンソル計算**: 深層学習のテンソルグラフを最適化する（TASO など）。
+- **ハードウェア設計・テンソル計算**: 深層学習のテンソルグラフを最適化する。**Tensat**[](#cite:yang2021tensat)は
+  テンソルグラフ超最適化を equality saturation で行い、逐次探索の TASO 比で最適化時間を 1/48 に縮めた。
 - **CAD・記号計算・型推論**: 等式的書き換えが効く領域全般。
 - **従来コンパイラの最適化**: Tate らの原論文[](#cite:tate2009)は、LLVM 的な最適化を
   equality saturation で行い、人手のパス順序を上回る例を示した。
+
+egg の登場後、equality saturation は単なるツールから**研究プログラム**へと育った。
+**relational e-matching**[](#cite:zhang2022relational)は、e-graph 上のパターン照合を関係データベースの
+結合問題として定式化し、最悪計算量最適な結合アルゴリズムを持ち込んで、初の計算量保証と桁違いの高速化を得た。
+**egglog**[](#cite:zhang2023egglog)は equality saturation と [Datalog](dataflow-analysis.md) を統合し、
+書き換えと解析（しかも増分・協調的）を一つの不動点反復に乗せた。書き換え規則そのものを
+equality saturation で自動合成する **Ruler**[](#cite:nandi2021ruler)もある——規則を人が書く時代の先を見ている。
+
+そして equality saturation は**プロダクションのコンパイラ**にも届いた。WebAssembly ランタイム
+Wasmtime のバックエンド Cranelift は、中間最適化器に **ægraph（acyclic e-graph）**[](#cite:fallin2023aegraph)を
+採用している。ただし egg 流の飽和は JIT の速度制約には重すぎたため、SSA の非循環性を活かして
+飽和を一回走査に畳み込み、ノード構築時に即座に書き換える形へ作り替えられた。
+「等価な式を全部持ってから選ぶ」という理論的な発想が、実用コンパイラの速度制約と折り合った好例だ。
 
 equality saturation は[第 II 部の値番号付け](local-optimization.md)や
 [SSA の GVN](ssa-optimization.md)の正統な後継だと言える。値番号付けが「構造が同じ式を一つにまとめる」のに対し、

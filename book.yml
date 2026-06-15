@@ -36,6 +36,7 @@ chapters:
     chapters:
       - equality-saturation.md
       - superoptimization.md
+      - domain-specific-compilers.md
       - ml-and-future.md
   - appendix:
     - glossary.md
