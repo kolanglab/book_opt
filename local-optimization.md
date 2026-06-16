@@ -70,7 +70,7 @@ end
 
 > [!NOTE]
 > 分岐のある関数全体では、`if` の二経路から `1` と `2` が合流して「定数でない」となる場合がある
-> （[前章のデータフロー解析](dataflow-analysis.md)で見た合流）。
+> （[データフロー解析の章](dataflow-analysis.md)で見た合流）。
 > 局所版はブロック内だけなので合流が起きず単純だが、大域版は格子上の合流（meet）が要る。
 > さらに「定数になった条件分岐は決して通らない枝を生む」ことに気づくと、
 > 解析と最適化を同時に回す **SCCP**[](#cite:wegman1991) に到達する——[ssa-optimization](ssa-optimization.md) で扱う。
@@ -180,7 +180,7 @@ def commutative?(op) = %i[+ * & | ^].include?(op)
 だが視野をブロックの外、関数全体に広げると、合流点で事実がぶつかる問題が出る。
 そこで効くのが [intermediate-representation.md](intermediate-representation.md) で導入した **SSA 形式**だ。
 SSA では各変数が単一定義なので、「`x` の値は何か」を表で持ち回る必要すらなくなり、
-これらの局所最適化が自然に関数全体へ拡張される。次章 [ssa-optimization](ssa-optimization.md) で、
+これらの局所最適化が自然に関数全体へ拡張される。のちの [ssa-optimization](ssa-optimization.md) の章で、
 その威力——疎な定数伝播 SCCP[](#cite:wegman1991) と大域値番号付け[](#cite:alpern1988)——を見る。
 
 その前に、本章までで「冗長な計算」をたくさん作った（コピー代入や使われない一時変数）。

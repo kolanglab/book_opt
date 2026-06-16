@@ -203,7 +203,7 @@ GVN は[共通部分式除去](local-optimization.md)を合流越しに行うも
 この表現の利点は、最適化が「グラフから冗長ノードを消す・融合する」だけで済み、
 ブロック境界という人為的な制約に縛られないことだ。GVN・定数畳み込み・コード移動が
 自然に絡み合う。欠点はメモリと実装の複雑さで、最終的にはブロックへスケジュールし直す必要がある。
-HotSpot サーバコンパイラ、GraalVM、近年の V8（Turboshaft の前身 Turbofan）などが sea of nodes 系を採る。
+HotSpot サーバコンパイラ、GraalVM、そしてかつての V8（Turbofan）などが sea of nodes 系を採用してきた（ただし V8 自身は近年 CFG ベースの IR へ回帰しつつある——[中間表現の章](intermediate-representation.md)）。
 
 > [!NOTE]
 > sea of nodes は「**何を計算するか**（データ依存のグラフ）」と「**いつ・どこで計算するか**（スケジュール）」を

@@ -199,7 +199,7 @@ SSA では各変数が一度しか定義されず、生存範囲が[支配木](i
 > 実装では LLVM の greedy アロケータ[](#cite:olesen2011greedy)（区間を大きい順に割り当て、衝突したら退避させて再挿入する後戻り探索）や、
 > Cranelift の regalloc2[](#cite:fallin2022regalloc2)が SSA を前提に設計されている。退避やスピルの判断を
 > [強化学習で置き換える試み](ml-and-future.md)[](#cite:venkatakeerthy2023rl4real)もあり、割り当て器を丸ごと検証する代わりに
-> [CompCert](superoptimization.md)が毎回**翻訳検証**する道[](#cite:rideau2010regalloc)もある。
+> [CompCert](ml-and-future.md)が毎回**翻訳検証**する道[](#cite:rideau2010regalloc)もある。
 
 ## まとめ
 
